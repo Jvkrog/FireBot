@@ -45,12 +45,10 @@ The system focuses on:
              │
     ┌────────┴────────┐
     ▼                 ▼
-
-
 ┌──────────────┐   ┌──────────────┐
 │ Motor Driver │   │ Blynk Cloud  │
 │  (Mobility)  │   │  Dashboard   │
-└──────────────┘   └──────┬───────┘
+└──────────────┘   └──────────────┘
 ▼
 ┌──────────────┐
 │   User Alert │
@@ -156,6 +154,4 @@ Observe → Detect → Decide → Alert → Continue Monitoring
 This ensures fast response without human dependency.
 
 ---
-```
 
----
