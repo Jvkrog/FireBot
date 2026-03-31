@@ -1,79 +1,161 @@
-//FireBot//
 
-//Automatic Fire Detection with Blynk Alerts//
+ 
+## FireBot — Autonomous Fire Detection System
 
-//Overview:
+> Mobile fire detection robot with real-time IoT monitoring, alerting, and autonomous observation.
+---
 
--->An autonomous fire-detection robot designed to identify fire presence and notify users in real time using IoT dashboards.
+## Overview
 
--->The focus is on early detection and monitoring, not manual intervention.
+FireBot is an autonomous fire-detection system designed to identify fire presence and notify users in real time via an IoT dashboard.
 
-//Features:
+Unlike traditional systems, FireBot introduces **mobility + continuous monitoring**, enabling detection in dynamic environments.
+```
+The system focuses on:
+- early detection  
+- real-time alerts  
+- reduced human dependency  
+```
+---
 
--->Fire detection using flame sensor
+## Key Features
+```
+-  Flame-based fire detection  
+-  Real-time IoT dashboard (Blynk)  
+-  Instant alert triggering  
+-  Mobile robotic platform  
+-  Continuous monitoring loop  
+```
+---
 
--->Real-time status updates on Blynk
+## System Architecture
 
--->Immediate alert when fire is detected
+```
 
--->Modular robot design
+```
+      ┌──────────────┐
+      │ Flame Sensor │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │  ESP8266 MCU │
+      │ (Processing) │
+      └──────┬───────┘
+             │
+    ┌────────┴────────┐
+    ▼                 ▼
+```
 
-//Hardware Used:
+┌──────────────┐   ┌──────────────┐
+│ Motor Driver │   │ Blynk Cloud  │
+│  (Mobility)  │   │  Dashboard   │
+└──────────────┘   └──────┬───────┘
+▼
+┌──────────────┐
+│   User Alert │
+└──────────────┘
 
--->Nodemcu Esp8266
+```
 
--->Flame sensor
+---
 
--->Motor driver & chassis
+## System Flow
 
--->Power module
+```
 
-//Software Stack
+Sensor → Detection → Processing → Alert → Monitoring Loop
 
--->Arduino framework
+```
 
--->Blynk IoT platform
+### Working Logic
+```
+- Flame sensor continuously scans environment  
+- ESP8266 processes sensor input in real time  
+```
+```
+**On fire detection:**
+- System enters alert state  
+- Blynk dashboard is updated instantly  
+- User receives notification  
+- Monitoring continues without interruption  
+```
+---
 
-//System Architecture
+## Hardware Used
+```
+- NodeMCU (ESP8266)  
+- Flame sensor  
+- Motor driver (L298N)  
+- Robotic chassis  
+- Power module  
+```
+---
 
--->Flame sensor continuously monitors surroundings
+## Software Stack
+```
+- Arduino framework  
+- Blynk IoT platform  
+```
+---
 
--->ESP32 processes sensor data
+## Design Decisions
 
-//On fire detection:
+### Why ESP8266
+```
+- Built-in WiFi → direct cloud connectivity  
+- Lightweight and efficient for real-time systems  
+```
+### Why Blynk
+```
+- Fast IoT dashboard setup  
+- Real-time visualization and alerts  
+```
+### Why Mobile Platform
+```
+- Covers larger area than fixed systems  
+- Enables dynamic monitoring  
+```
+---
 
--->Updates Blynk dashboard
+## Real-World Use Cases
+```
+- Industrial safety monitoring  
+- Warehouses and storage units  
+- Laboratories  
+- Remote or unmanned environments  
+```
+---
 
--->Triggers alert state
+## Limitations & Challenges
+```
+- False triggers from bright light sources  
+- Limited detection range  
 
--->System remains active for continuous monitoring
+```
+---
 
-//Why This Project Matters
+## Key Learnings
+```
+- Sensor calibration directly affects reliability  
+- IoT integration simplifies monitoring systems  
+- Continuous systems must handle noise and false positives  
+- Automation significantly reduces response time  
+```
+---
 
-//Fire detection systems often:
 
--->rely on fixed infrastructure
+The system follows:
 
--->lack mobility
+```
 
--->This robot introduces mobility + real-time cloud monitoring, useful for warehouses, labs, and industrial safety.
+Observe → Detect → Decide → Alert → Continue Monitoring
 
-//Limitations & Challenges
+```
 
--->False triggers from light sources
+This ensures fast response without human dependency.
 
--->Detection range limited by sensor quality
+---
+```
 
--->No extinguishing mechanism (monitoring only)
-
-//Key Learnings
-
--->Sensor calibration is crucial
-
--->IoT dashboards simplify real-time monitoring
-
--->Automation reduces response time significantly
-
-//Future Improvements
-
-Multi-sensor fusion (smoke + heat)
+---
