@@ -30,7 +30,7 @@ The system focuses on:
 
 ## System Architecture
 
-```
+
 
 ```
       ┌──────────────┐
@@ -45,7 +45,7 @@ The system focuses on:
              │
     ┌────────┴────────┐
     ▼                 ▼
-```
+
 
 ┌──────────────┐   ┌──────────────┐
 │ Motor Driver │   │ Blynk Cloud  │
